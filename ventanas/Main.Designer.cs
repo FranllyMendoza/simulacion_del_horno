@@ -30,23 +30,20 @@ namespace simulacion_del_horno.ventanas
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.cantidad_material_numericUpDown = new System.Windows.Forms.NumericUpDown();
             this.label3 = new System.Windows.Forms.Label();
             this.simular_incineracion_button = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.combustible_comboBox = new System.Windows.Forms.ComboBox();
+            this.tiempo_textBox = new System.Windows.Forms.TextBox();
+            this.material_gastado_textBox = new System.Windows.Forms.TextBox();
+            this.limpiar_button = new System.Windows.Forms.Button();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.radioButton4 = new System.Windows.Forms.RadioButton();
             this.radioButton3 = new System.Windows.Forms.RadioButton();
             this.label6 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            ((System.ComponentModel.ISupportInitialize)(this.cantidad_material_numericUpDown)).BeginInit();
+            this.material_comboBox = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // label1
@@ -58,26 +55,10 @@ namespace simulacion_del_horno.ventanas
             this.label1.TabIndex = 0;
             this.label1.Text = "material :";
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 124);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(157, 25);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "cantidad material :";
-            // 
-            // cantidad_material_numericUpDown
-            // 
-            this.cantidad_material_numericUpDown.Location = new System.Drawing.Point(175, 122);
-            this.cantidad_material_numericUpDown.Name = "cantidad_material_numericUpDown";
-            this.cantidad_material_numericUpDown.Size = new System.Drawing.Size(331, 31);
-            this.cantidad_material_numericUpDown.TabIndex = 3;
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(12, 176);
+            this.label3.Location = new System.Drawing.Point(12, 124);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(119, 25);
             this.label3.TabIndex = 5;
@@ -85,17 +66,18 @@ namespace simulacion_del_horno.ventanas
             // 
             // simular_incineracion_button
             // 
-            this.simular_incineracion_button.Location = new System.Drawing.Point(175, 313);
+            this.simular_incineracion_button.Location = new System.Drawing.Point(175, 261);
             this.simular_incineracion_button.Name = "simular_incineracion_button";
             this.simular_incineracion_button.Size = new System.Drawing.Size(177, 47);
             this.simular_incineracion_button.TabIndex = 6;
             this.simular_incineracion_button.Text = "simular incineración";
             this.simular_incineracion_button.UseVisualStyleBackColor = true;
+            this.simular_incineracion_button.Click += new System.EventHandler(this.simular_incineracion_button_Click);
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(12, 381);
+            this.label4.Location = new System.Drawing.Point(12, 329);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(201, 25);
             this.label4.TabIndex = 7;
@@ -104,52 +86,53 @@ namespace simulacion_del_horno.ventanas
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(12, 434);
+            this.label5.Location = new System.Drawing.Point(12, 382);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(183, 25);
+            this.label5.Size = new System.Drawing.Size(154, 25);
             this.label5.TabIndex = 8;
-            this.label5.Text = "conbustible gastado: ";
+            this.label5.Text = "material gastado: ";
             // 
-            // comboBox2
+            // combustible_comboBox
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
+            this.combustible_comboBox.FormattingEnabled = true;
+            this.combustible_comboBox.Items.AddRange(new object[] {
             "madera ",
             "cascara ",
             "hoja seca ",
             "carbon vejetal"});
-            this.comboBox2.Location = new System.Drawing.Point(175, 173);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(331, 33);
-            this.comboBox2.TabIndex = 10;
+            this.combustible_comboBox.Location = new System.Drawing.Point(175, 121);
+            this.combustible_comboBox.Name = "combustible_comboBox";
+            this.combustible_comboBox.Size = new System.Drawing.Size(331, 33);
+            this.combustible_comboBox.TabIndex = 10;
             // 
-            // textBox1
+            // tiempo_textBox
             // 
-            this.textBox1.Location = new System.Drawing.Point(214, 378);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(292, 31);
-            this.textBox1.TabIndex = 11;
+            this.tiempo_textBox.Location = new System.Drawing.Point(214, 326);
+            this.tiempo_textBox.Name = "tiempo_textBox";
+            this.tiempo_textBox.Size = new System.Drawing.Size(292, 31);
+            this.tiempo_textBox.TabIndex = 11;
             // 
-            // textBox2
+            // material_gastado_textBox
             // 
-            this.textBox2.Location = new System.Drawing.Point(190, 431);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(316, 31);
-            this.textBox2.TabIndex = 12;
+            this.material_gastado_textBox.Location = new System.Drawing.Point(214, 379);
+            this.material_gastado_textBox.Name = "material_gastado_textBox";
+            this.material_gastado_textBox.Size = new System.Drawing.Size(292, 31);
+            this.material_gastado_textBox.TabIndex = 12;
             // 
-            // button1
+            // limpiar_button
             // 
-            this.button1.Location = new System.Drawing.Point(175, 485);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(177, 47);
-            this.button1.TabIndex = 13;
-            this.button1.Text = "limpiar resultado";
-            this.button1.UseVisualStyleBackColor = true;
+            this.limpiar_button.Location = new System.Drawing.Point(175, 433);
+            this.limpiar_button.Name = "limpiar_button";
+            this.limpiar_button.Size = new System.Drawing.Size(177, 47);
+            this.limpiar_button.TabIndex = 13;
+            this.limpiar_button.Text = "limpiar resultado";
+            this.limpiar_button.UseVisualStyleBackColor = true;
+            this.limpiar_button.Click += new System.EventHandler(this.limpiar_button_Click);
             // 
             // radioButton1
             // 
             this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(175, 234);
+            this.radioButton1.Location = new System.Drawing.Point(175, 182);
             this.radioButton1.Name = "radioButton1";
             this.radioButton1.Size = new System.Drawing.Size(62, 29);
             this.radioButton1.TabIndex = 15;
@@ -160,7 +143,7 @@ namespace simulacion_del_horno.ventanas
             // radioButton2
             // 
             this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(243, 234);
+            this.radioButton2.Location = new System.Drawing.Point(243, 182);
             this.radioButton2.Name = "radioButton2";
             this.radioButton2.Size = new System.Drawing.Size(72, 29);
             this.radioButton2.TabIndex = 16;
@@ -171,7 +154,7 @@ namespace simulacion_del_horno.ventanas
             // radioButton4
             // 
             this.radioButton4.AutoSize = true;
-            this.radioButton4.Location = new System.Drawing.Point(399, 234);
+            this.radioButton4.Location = new System.Drawing.Point(399, 182);
             this.radioButton4.Name = "radioButton4";
             this.radioButton4.Size = new System.Drawing.Size(82, 29);
             this.radioButton4.TabIndex = 17;
@@ -182,7 +165,7 @@ namespace simulacion_del_horno.ventanas
             // radioButton3
             // 
             this.radioButton3.AutoSize = true;
-            this.radioButton3.Location = new System.Drawing.Point(321, 234);
+            this.radioButton3.Location = new System.Drawing.Point(321, 182);
             this.radioButton3.Name = "radioButton3";
             this.radioButton3.Size = new System.Drawing.Size(72, 29);
             this.radioButton3.TabIndex = 18;
@@ -193,49 +176,46 @@ namespace simulacion_del_horno.ventanas
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(12, 236);
+            this.label6.Location = new System.Drawing.Point(12, 184);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(102, 25);
             this.label6.TabIndex = 19;
             this.label6.Text = "velocidad  :";
             // 
-            // comboBox1
+            // material_comboBox
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.material_comboBox.FormattingEnabled = true;
+            this.material_comboBox.Items.AddRange(new object[] {
             "guineos ",
             "platanos ",
             "salami "});
-            this.comboBox1.Location = new System.Drawing.Point(175, 70);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(331, 33);
-            this.comboBox1.TabIndex = 20;
+            this.material_comboBox.Location = new System.Drawing.Point(175, 70);
+            this.material_comboBox.Name = "material_comboBox";
+            this.material_comboBox.Size = new System.Drawing.Size(331, 33);
+            this.material_comboBox.TabIndex = 20;
             // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(530, 681);
-            this.Controls.Add(this.comboBox1);
+            this.ClientSize = new System.Drawing.Size(530, 509);
+            this.Controls.Add(this.material_comboBox);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.radioButton3);
             this.Controls.Add(this.radioButton4);
             this.Controls.Add(this.radioButton2);
             this.Controls.Add(this.radioButton1);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.comboBox2);
+            this.Controls.Add(this.limpiar_button);
+            this.Controls.Add(this.material_gastado_textBox);
+            this.Controls.Add(this.tiempo_textBox);
+            this.Controls.Add(this.combustible_comboBox);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.simular_incineracion_button);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.cantidad_material_numericUpDown);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "Main";
             this.Text = "Main";
-            ((System.ComponentModel.ISupportInitialize)(this.cantidad_material_numericUpDown)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -244,21 +224,19 @@ namespace simulacion_del_horno.ventanas
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.NumericUpDown cantidad_material_numericUpDown;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button simular_incineracion_button;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ComboBox combustible_comboBox;
+        private System.Windows.Forms.TextBox tiempo_textBox;
+        private System.Windows.Forms.TextBox material_gastado_textBox;
+        private System.Windows.Forms.Button limpiar_button;
         private System.Windows.Forms.RadioButton radioButton1;
         private System.Windows.Forms.RadioButton radioButton2;
         private System.Windows.Forms.RadioButton radioButton4;
         private System.Windows.Forms.RadioButton radioButton3;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox material_comboBox;
     }
 }
